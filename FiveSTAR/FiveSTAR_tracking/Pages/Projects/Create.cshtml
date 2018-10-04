@@ -1,0 +1,97 @@
+﻿@page
+@{
+}
+<style>
+    .form-control{
+        width:auto;
+    }
+</style>
+<form>
+    <div class="form-group">
+        Project Name: <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        Start Date: <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        Expected End Date:<input type="text" class="form-control">
+    </div>
+    <div  class="form-group">
+        Actual End Date:<input type="text" class="form-control">
+    </div>
+    <div  class="form-group">
+        Description:<input type="text" class="form-control">
+    </div>
+    <div  class="form-group">
+        <select>
+            <option>Project Type</option>
+            <option>New Project</option>
+            <option>Upgrade</option>
+            <option>Repair</option>
+        </select>
+    </div>
+    <div  class="form-check">
+        <input type="checkbox" class="form-check-input" id="planned">
+        <label class="form-check-label" for="exampleCheck1">Planned Project</label>
+    </div>
+    <div  class="form-check">
+        <input type="checkbox" class="form-check-input" id="unplanned">
+        <label class="form-check-label" for="exampleCheck1">Unplanned Project</label>
+    </div>
+    <div  class="form-group">
+        Funded From:<input type="text" class="form-control">
+    </div>
+    <div  class="form-group">
+        Labor Costs:<input type="text" class="form-control">
+    </div>
+    <div  class="form-group">
+        Material Costs:<input type="text" class="form-control">
+    </div>
+    <div  class="form-group">
+        Volunteer Hours:<input type="text" class="form-control">
+    </div>
+    <button onclick="capToggle()">View CAP Information</button>
+    <div id="CAP">
+        <div  class="form-group">
+            CAPex Budgeted:<input type="text" class="form-control">
+        </div>
+        <div  class="form-group">
+            CAPex Quoted:<input type="text" class="form-control">
+        </div>
+        <div  class="form-group">
+            CAPex Actual:<input type="text" class="form-control">
+        </div>
+        <div  class="form-group">
+            CAPex Difference:<input type="text" class="form-control">
+        </div>
+    </div>
+    <button onclick="opexToggle()">View OPEX Information</button>
+    <div id="OPEX">
+
+        <div  class="form-group">
+            OPex Original:<input type="text" class="form-control">
+        </div>
+        <div  class="form-group">
+            OPex Budgeted:<input type="text" class="form-control">
+        </div>
+        <div  class="form-group">
+            OPex Actual:<input type="text" class="form-control">
+        </div>
+        <div  class="form-group">
+            OPex Difference:<input type="text" class="form-control">
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(window).load(function () {
+        $("#CAP").hide();
+        $("#OPEX").hide();
+    });
+    function capToggle() {
+        $("#CAP").toggle();
+    }
+    function opexToggle() {
+        $("#OPEX").toggle();
+    }
+</script>
