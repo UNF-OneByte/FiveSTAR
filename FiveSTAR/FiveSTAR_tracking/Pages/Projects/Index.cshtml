@@ -1,0 +1,172 @@
+﻿@page
+
+@{
+}
+<style>
+    .well-sm{
+        margin-right:60px;
+        margin-left:10px;
+        width:500px;
+    }
+</style>
+<a asp-page="Pages/Index">Return Home</a>
+
+<h2>Project Queues</h2>
+
+<div class="row">
+    <div class="well well-sm col-sm-4">
+        <center>
+            <h3>In Process (Planned)</h3>
+            <a asp-page="Create">New Project</a>
+            <hr />
+        </center>
+        <table class=" table table-bordered">
+            <tr>
+                <th>Project Name</th>
+                <th>Project Manager</th>
+                <th>Start Date</th>
+                <th>Edit</th>
+                <th>Update</th>
+            </tr>
+            <tr>
+                <td>Re-Design Patio</td>
+                <td>Kayla Shell</td>
+                <td>Aug 8, 2018</td>
+                <th><a asp-page="Edit">Edit</a></th>
+                <td>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#updateProject">Update Project</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Replace Floors</td>
+                <td>Kayla Shell</td>
+                <td>Sep 7, 2018</td>
+                <th><a asp-page="Edit">Edit</a></th>
+                <td>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#updateProject">Update Project</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="well well-sm col-sm-4">
+        <center>
+            <h3>In Process (Not Planned)</h3>
+            <a asp-page="Create">New Project</a>
+            <hr />
+        </center>
+        <table class=" table table-bordered">
+            <tr>
+                <th>Project Name</th>
+                <th>Project Manager</th>
+                <th>Start Date</th>
+                <th>Edit</th>
+                <th>Update</th>
+            </tr>
+            <tr>
+                <td>Replace Water Pipes</td>
+                <td>Jimmy John</td>
+                <td>Oct 8, 2018</td>
+                <th><a asp-page="Edit">Edit</a></th>
+                <td>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#updateProject">Update Project</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Replace Light Bulbs</td>
+                <td>Kayla Shell</td>
+                <td>Oct 7, 2018</td>
+                <th><a asp-page="Edit">Edit</a></th>
+                <td>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#updateProject">Update Project</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="well well-sm col-sm-4">
+        <center>
+            <h3>Future Projects</h3>
+            <a asp-page="Create">New Project</a>
+            <hr />
+        </center>
+        <table class=" table table-bordered">
+            <tr>
+                <th>Project Name</th>
+                <th>Project Manager</th>
+                <th>Edit</th>
+                <th>Update</th>
+            </tr>
+            <tr>
+                <td>Reimage Comp Lab</td>
+                <td>Mike Edwards</td>
+                <th><a asp-page="Edit">Edit</a></th>
+                <td>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#updateProject">Update Project</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="well well-sm col-sm-4">
+        <center>
+            <h3>Completed Projects</h3>
+            <hr />
+        </center>
+        <table class=" table table-bordered">
+            <tr>
+                <th>Project Name</th>
+                <th>Project Manager</th>
+                <th>Project Length</th>
+            </tr>
+            <tr>
+                <td>Replace Resident Doors</td>
+                <td>Shelia Brooks</td>
+                <td>3 Months</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="updateProject" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" id="editModal" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Update Project </h2>
+            </div>
+            <form>
+                <div style="margin:10px" class="form-group">
+                    Project Name: <input type="text" class="form-control">
+                </div>
+                <div style="margin:10px" class="form-group">
+                    Expected End Date:<input type="text" class="form-control">
+                </div>
+                <div style="margin:15px" class="form-group">
+                    Actual End Date:<input type="text" class="form-control">
+                </div>
+                <div style="margin:15px" class="form-group">
+                    Description:<input type="text" class="form-control">
+                </div>
+                <div style="margin:15px" class="form-group">
+                    Additional Fund From:<input type="text" class="form-control">
+                </div>
+                <div style="margin:15px" class="form-group">
+                    Labor Costs:<input type="text" class="form-control">
+                </div>
+                <div style="margin:15px" class="form-group">
+                    Material Costs:<input type="text" class="form-control">
+                </div>
+                <div style="margin:15px" class="form-group">
+                    Volunteer Hours:<input type="text" class="form-control">
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button class="btn btn-secondary">Update Project</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $('#updateProject').on('shown.bs.modal', function () {
+    });
+</script>
