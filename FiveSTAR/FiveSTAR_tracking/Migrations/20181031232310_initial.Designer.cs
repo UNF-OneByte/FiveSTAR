@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FiveSTAR_tracking.Migrations
 {
     [DbContext(typeof(ProjectsContext))]
-    [Migration("20180927172633_Initial")]
-    partial class Initial
+    [Migration("20181031232310_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,11 +28,17 @@ namespace FiveSTAR_tracking.Migrations
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<decimal>("Hours");
+                    b.Property<decimal>("HoursWorked");
 
-                    b.Property<decimal>("MaterialCost");
+                    b.Property<string>("TaskName");
 
-                    b.Property<string>("Task");
+                    b.Property<decimal>("Task_Act_Cost");
+
+                    b.Property<decimal>("Task_Est_Cost");
+
+                    b.Property<int>("idUsers");
+
+                    b.Property<int>("idVendor");
 
                     b.HasKey("ID");
 
