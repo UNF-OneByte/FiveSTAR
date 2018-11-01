@@ -1,0 +1,44 @@
+﻿@page
+
+@{
+    Layout = "~/Pages/Shared/_Layout_not_home.cshtml";
+}
+
+<!-- chart libary -->
+<script type="text/javascript" src="js/canvasjs.min.js"></script>
+<!-- Font awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<div class="row">
+    <div class="wrap">
+        <span class="border border-dark">
+            <div class="wrapBorder">
+                <h4>Pie Chart</h4>
+                <hr />
+                <h6>Change view</h6>
+                <label class="switch">
+                    <input type="checkbox" onclick="pieView()" id="sldBTN">
+                    <span class="slider round"></span>
+                </label>
+                <div id="pie" style="height: 300px; width: 100%;"></div>
+                <hr />
+                <h4>Create Data</h4>
+                <table class="table table-striped" id="table">
+                    <th>Income</th>
+                    <th>Expense</th>
+                    <th>Net Income</th>
+                </table>
+                <hr />
+                <button type="button" class="btn btn-primary btn-sm" id="test" onclick="newRow()">Add Row</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="byeRow()" disabled>Remove Row</button>
+            </div>
+        </span>
+    </div>
+</div>
+
+
+<!-- my scripts -->
+<script src="js/script.js"></script>
