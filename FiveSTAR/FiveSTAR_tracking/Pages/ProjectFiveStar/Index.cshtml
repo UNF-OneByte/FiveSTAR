@@ -1,0 +1,97 @@
+﻿@page
+@model FiveSTAR_tracking.Pages.ProjectFiveStar.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].ProjectManager)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].EstEndtDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].ActEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].EstCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].ActCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].EstHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].ActHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectsFiveStar[0].IdUsers)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ProjectsFiveStar) {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectManager)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstEndtDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsers)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

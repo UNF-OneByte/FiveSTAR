@@ -14,5 +14,6 @@ namespace FiveSTAR_tracking.Models
         }
 
         public DbSet<FiveSTAR_tracking.Models.ProjectTask> ProjectTasks{ get; set; }
+        public DbSet<FiveSTAR_tracking.Models.ProjectsFiveStar> ProjectFiveStar { get; set; }
     }
 }
