@@ -8,19 +8,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FiveSTAR_tracking.Models;
 
-namespace FiveSTAR_tracking.Pages.Tasks
+namespace FiveSTAR_tracking.Pages.ProjectTasks
 {
     public class EditModel : PageModel
     {
-        private readonly FiveSTAR_tracking.Models.ProjectsContext _context;
+        private readonly FiveSTAR_tracking.Models.ProjectTaskContext _context;
 
-        public EditModel(FiveSTAR_tracking.Models.ProjectsContext context)
+        public EditModel(FiveSTAR_tracking.Models.ProjectTaskContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public Projects Projects { get; set; }
+        public ProjectTask ProjectTask { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -29,9 +29,9 @@ namespace FiveSTAR_tracking.Pages.Tasks
                 return NotFound();
             }
 
-            Projects = await _context.Projects.FirstOrDefaultAsync(m => m.ID == id);
+            ProjectTask = await _context.ProjectTasks.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Projects == null)
+            if (ProjectTask == null)
             {
                 return NotFound();
             }
@@ -45,7 +45,7 @@ namespace FiveSTAR_tracking.Pages.Tasks
                 return Page();
             }
 
-            _context.Attach(Projects).State = EntityState.Modified;
+            _context.Attach(ProjectTask).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +53,7 @@ namespace FiveSTAR_tracking.Pages.Tasks
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProjectsExists(Projects.ID))
+                if (!ProjectTaskExists(ProjectTask.ID))
                 {
                     return NotFound();
                 }
@@ -66,9 +66,9 @@ namespace FiveSTAR_tracking.Pages.Tasks
             return RedirectToPage("./Index");
         }
 
-        private bool ProjectsExists(string id)
+        private bool ProjectTaskExists(string id)
         {
-            return _context.Projects.Any(e => e.ID == id);
+            return _context.ProjectTasks.Any(e => e.ID == id);
         }
     }
 }

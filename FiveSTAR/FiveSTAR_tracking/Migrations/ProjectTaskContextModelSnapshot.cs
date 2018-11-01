@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FiveSTAR_tracking.Migrations
 {
-    [DbContext(typeof(ProjectsContext))]
-    partial class ProjectsContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ProjectTaskContext))]
+    partial class ProjectTaskContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -19,7 +19,7 @@ namespace FiveSTAR_tracking.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FiveSTAR_tracking.Models.Projects", b =>
+            modelBuilder.Entity("FiveSTAR_tracking.Models.ProjectTask", b =>
                 {
                     b.Property<string>("ID")
                         .ValueGeneratedOnAdd();
@@ -40,7 +40,7 @@ namespace FiveSTAR_tracking.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Projects");
+                    b.ToTable("ProjectTasks");
                 });
 #pragma warning restore 612, 618
         }

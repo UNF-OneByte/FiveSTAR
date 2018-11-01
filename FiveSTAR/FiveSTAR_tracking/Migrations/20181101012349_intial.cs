@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FiveSTAR_tracking.Migrations
 {
-    public partial class initial : Migration
+    public partial class intial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Projects",
+                name: "ProjectTasks",
                 columns: table => new
                 {
                     ID = table.Column<string>(nullable: false),
@@ -22,14 +22,14 @@ namespace FiveSTAR_tracking.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Projects", x => x.ID);
+                    table.PrimaryKey("PK_ProjectTasks", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Projects");
+                name: "ProjectTasks");
         }
     }
 }

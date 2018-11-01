@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FiveSTAR_tracking.Models
 {
-	public class Projects
+	public class ProjectTask
 	{
 		public string ID { get; set; }
 		public string TaskName { get; set; }

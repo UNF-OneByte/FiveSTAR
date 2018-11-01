@@ -86,7 +86,7 @@ window.onload = function() {
 function pie(income, expense, pieViewAction) {
     var view = "";
 
-    if (pieViewAction == true)
+    if (pieViewAction === true)
         view = "doughnut";
     else
         view = "pie";
