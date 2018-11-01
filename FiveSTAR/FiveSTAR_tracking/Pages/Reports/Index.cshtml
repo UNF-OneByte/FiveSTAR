@@ -1,5 +1,5 @@
 ﻿@page
-@model FiveSTAR_tracking.Pages.Tasks.IndexModel;
+@model FiveSTAR_tracking.Pages.ProjectTasks.IndexModel;
 @{
     Layout = "~/Pages/Shared/_Layout_not_home.cshtml";
 }
@@ -32,7 +32,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Projects)
+            @foreach (var item in Model.ProjectTask)
             {
             <tr>
                 <td>
@@ -56,4 +56,4 @@
 
 
     <!-- my scripts -->
-    <script src="js/script.js"></script>
+    <script src="~/js/script.js"></script>
