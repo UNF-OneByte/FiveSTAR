@@ -1,0 +1,64 @@
+﻿@page
+@model FiveSTAR_tracking.Pages.ProjectTasks.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProjectTask</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.TaskName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.TaskName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.Task_Est_Cost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.Task_Est_Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.Task_Act_Cost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.Task_Act_Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.idVendor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.idVendor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.HoursWorked)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.HoursWorked)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.idUsers)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.idUsers)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ProjectTask.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -7,22 +7,22 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FiveSTAR_tracking.Models;
 
-namespace FiveSTAR_tracking.Pages.Tasks
+namespace FiveSTAR_tracking.Pages.ProjectTasks
 {
     public class IndexModel : PageModel
     {
-        private readonly FiveSTAR_tracking.Models.ProjectsContext _context;
+        private readonly FiveSTAR_tracking.Models.ProjectTaskContext _context;
 
-        public IndexModel(FiveSTAR_tracking.Models.ProjectsContext context)
+        public IndexModel(FiveSTAR_tracking.Models.ProjectTaskContext context)
         {
             _context = context;
         }
 
-        public IList<Projects> Projects { get;set; }
+        public IList<ProjectTask> ProjectTask { get;set; }
 
         public async Task OnGetAsync()
         {
-            Projects = await _context.Projects.ToListAsync();
+            ProjectTask = await _context.ProjectTasks.ToListAsync();
         }
     }
 }

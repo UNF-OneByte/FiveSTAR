@@ -7,18 +7,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FiveSTAR_tracking.Models;
 
-namespace FiveSTAR_tracking.Pages.Tasks
+namespace FiveSTAR_tracking.Pages.ProjectTasks
 {
     public class DetailsModel : PageModel
     {
-        private readonly FiveSTAR_tracking.Models.ProjectsContext _context;
+        private readonly FiveSTAR_tracking.Models.ProjectTaskContext _context;
 
-        public DetailsModel(FiveSTAR_tracking.Models.ProjectsContext context)
+        public DetailsModel(FiveSTAR_tracking.Models.ProjectTaskContext context)
         {
             _context = context;
         }
 
-        public Projects Projects { get; set; }
+        public ProjectTask ProjectTask { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -27,9 +27,9 @@ namespace FiveSTAR_tracking.Pages.Tasks
                 return NotFound();
             }
 
-            Projects = await _context.Projects.FirstOrDefaultAsync(m => m.ID == id);
+            ProjectTask = await _context.ProjectTasks.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Projects == null)
+            if (ProjectTask == null)
             {
                 return NotFound();
             }
