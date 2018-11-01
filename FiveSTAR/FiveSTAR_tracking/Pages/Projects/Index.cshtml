@@ -1,17 +1,22 @@
 ﻿@page
 
 @{
+    Layout = "~/Pages/Shared/_Layout_not_home.cshtml";
 }
 <style>
-    .well-sm{
-        margin-right:60px;
-        margin-left:10px;
-        width:500px;
+    .well-sm {
+        margin-right: 60px;
+        margin-left: 10px;
+        width: 500px;
     }
 </style>
-<a asp-page="Pages/Index">Return Home</a>
 
-<h2>Project Queues</h2>
+<div class="row">    
+        <h2>Project Queues</h2>
+        <a asp-page="../ProjectTasks/Index" class="btn btn-primary btn-sm" role="button">View Tasks</a>  
+</div>
+
+<hr />
 
 <div class="row">
     <div class="well well-sm col-sm-4">

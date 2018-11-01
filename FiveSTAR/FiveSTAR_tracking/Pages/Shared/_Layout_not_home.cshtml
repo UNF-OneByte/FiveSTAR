@@ -28,15 +28,14 @@
                 </button>
                 <a asp-page="../Index" class="navbar-brand">FiveSTAR_tracking</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-page="Projects/Index">Projects</a></li>
-                    <li><a asp-page="Reports/Index">Reports</a></li>
-                    @*<li><a asp-page="/Contact">Administration</a></li>*@
-                </ul>
-                @*<p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>*@
-                <partial name="_LoginPartial" />
-            </div>
+			<div class="navbar-collapse collapse">
+			    <ul class="nav navbar-nav">
+				    <li><a asp-page="../Projects/Index">Projects</a></li>
+				    <li><a asp-page="../Reports/Index">Reports</a></li>
+				    @*<li><a asp-page="/Contact">Administration</a></li>*@
+			    </ul>						
+                <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
+			</div>
 		</div>
 	</nav>
 
