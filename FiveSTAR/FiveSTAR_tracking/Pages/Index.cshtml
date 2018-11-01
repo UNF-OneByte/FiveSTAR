@@ -4,93 +4,11 @@
     ViewData["Title"] = "Home page";
 }
 
-<!-- chart libary -->
-<script type="text/javascript" src="js/canvasjs.min.js"></script>
-<!-- Font awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <style>
-    .row {
-        padding: 10%;
+    .pad{
+        padding: 25%;
     }
 </style>
 
-<div class="row">
-    <div class="well well-lg col-md-5">
-        <center>
-            <h3>Add Projects</h3>
-            <hr />
-            <p>
-                <a asp-page="Projects/Index" class="btn btn-info btn-md" role="button">View</a>
-            </p>
-        </center>
-    </div>
-    <div class="col-md-2">
 
-    </div>
-    <div class="well well-lg col-md-5">
-        <center>
-            <h3>View Project</h3>
-            <hr />
-            <p>
-                <a asp-page="Projects/Index" class="btn btn-info btn-md" role="button">View</a>
-            </p>
-        </center>
-    </div>
-</div>
-<div class="row">
-    <div class="well well-lg col-md-5">
-        <center>
-            <h3>Add Tasks</h3>
-            <hr />
-            <p>
-                <a asp-page="ProjectTasks/Index" class="btn btn-info btn-md" role="button">View</a>
-            </p>
-        </center>
-    </div>
-    <div class="col-md-2">
-
-    </div>
-    <div class="well well-lg col-md-5">
-        <center>
-            <h3>View Tasks</h3>
-            <hr />
-            <p>
-                <a asp-page="ProjectTasks/Index" class="btn btn-info btn-md" role="button">View</a>
-            </p>
-        </center>
-    </div>
-</div>
-
-<div class="row">
-    <div class="wrap">
-        <span class="border border-dark">
-            <div class="wrapBorder">
-                <h4>Pie Chart</h4>    
-                    <hr />
-                <h6>Change view</h6>
-                <label class="switch">
-                    <input type="checkbox" onclick="pieView()" id="sldBTN">                    
-                    <span class="slider round"></span>
-                </label>                
-                <div id="pie" style="height: 300px; width: 100%;"></div>
-                <hr />
-                <h4>Create Data</h4>
-                <table class="table table-striped" id="table">
-                    <th>Income</th>
-                    <th>Expense</th>
-                    <th>Net Income</th>
-                </table>
-                <hr />
-                <button type="button" class="btn btn-primary btn-sm" id="test" onclick="newRow()">Add Row</button>
-                <button type="button" class="btn btn-dark btn-sm" onclick="byeRow()" disabled>Remove Row</button>
-            </div>
-        </span>
-    </div>
-</div>
-
-
-<!-- my scripts -->
-<script src="js/script.js"></script>
+<img class="pad" src="~/images/5starlogo.png" />
