@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FiveSTAR_tracking.Models;
 
-namespace FiveSTAR_tracking.Pages.Tasks
+namespace FiveSTAR_tracking.Pages.ProjectTasks
 {
     public class DeleteModel : PageModel
     {
-        private readonly FiveSTAR_tracking.Models.ProjectsContext _context;
+        private readonly FiveSTAR_tracking.Models.ProjectTaskContext _context;
 
-        public DeleteModel(FiveSTAR_tracking.Models.ProjectsContext context)
+        public DeleteModel(FiveSTAR_tracking.Models.ProjectTaskContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public Projects Projects { get; set; }
+        public ProjectTask ProjectTask { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -28,9 +28,9 @@ namespace FiveSTAR_tracking.Pages.Tasks
                 return NotFound();
             }
 
-            Projects = await _context.Projects.FirstOrDefaultAsync(m => m.ID == id);
+            ProjectTask = await _context.ProjectTasks.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Projects == null)
+            if (ProjectTask == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace FiveSTAR_tracking.Pages.Tasks
                 return NotFound();
             }
 
-            Projects = await _context.Projects.FindAsync(id);
+            ProjectTask = await _context.ProjectTasks.FindAsync(id);
 
-            if (Projects != null)
+            if (ProjectTask != null)
             {
-                _context.Projects.Remove(Projects);
+                _context.ProjectTasks.Remove(ProjectTask);
                 await _context.SaveChangesAsync();
             }
 

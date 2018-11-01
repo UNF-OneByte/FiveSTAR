@@ -4,16 +4,14 @@ using FiveSTAR_tracking.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FiveSTAR_tracking.Migrations
 {
-    [DbContext(typeof(ProjectsContext))]
-    [Migration("20180927172633_Initial")]
-    partial class Initial
+    [DbContext(typeof(ProjectTaskContext))]
+    partial class ProjectTaskContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,22 +19,28 @@ namespace FiveSTAR_tracking.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FiveSTAR_tracking.Models.Projects", b =>
+            modelBuilder.Entity("FiveSTAR_tracking.Models.ProjectTask", b =>
                 {
                     b.Property<string>("ID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<decimal>("Hours");
+                    b.Property<decimal>("HoursWorked");
 
-                    b.Property<decimal>("MaterialCost");
+                    b.Property<string>("TaskName");
 
-                    b.Property<string>("Task");
+                    b.Property<decimal>("Task_Act_Cost");
+
+                    b.Property<decimal>("Task_Est_Cost");
+
+                    b.Property<int>("idUsers");
+
+                    b.Property<int>("idVendor");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Projects");
+                    b.ToTable("ProjectTasks");
                 });
 #pragma warning restore 612, 618
         }

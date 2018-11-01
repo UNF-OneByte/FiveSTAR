@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FiveSTAR_tracking.Models
 {
-    public class ProjectsContext : DbContext
+    public class ProjectTaskContext : DbContext
     {
-        public ProjectsContext (DbContextOptions<ProjectsContext> options)
+        public ProjectTaskContext (DbContextOptions<ProjectTaskContext> options)
             : base(options)
         {
         }
 
-        public DbSet<FiveSTAR_tracking.Models.Projects> Projects { get; set; }
+        public DbSet<FiveSTAR_tracking.Models.ProjectTask> ProjectTasks{ get; set; }
     }
 }
