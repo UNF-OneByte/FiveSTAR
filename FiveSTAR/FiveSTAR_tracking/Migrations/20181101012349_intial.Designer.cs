@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FiveSTAR_tracking.Migrations
 {
-    [DbContext(typeof(ProjectsContext))]
-    [Migration("20181031232310_initial")]
-    partial class initial
+    [DbContext(typeof(ProjectTaskContext))]
+    [Migration("20181101012349_intial")]
+    partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace FiveSTAR_tracking.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FiveSTAR_tracking.Models.Projects", b =>
+            modelBuilder.Entity("FiveSTAR_tracking.Models.ProjectTask", b =>
                 {
                     b.Property<string>("ID")
                         .ValueGeneratedOnAdd();
@@ -42,7 +42,7 @@ namespace FiveSTAR_tracking.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Projects");
+                    b.ToTable("ProjectTasks");
                 });
 #pragma warning restore 612, 618
         }

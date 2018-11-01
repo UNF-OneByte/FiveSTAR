@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using FiveSTAR_tracking.Models;
 
-namespace FiveSTAR_tracking.Pages.Tasks
+namespace FiveSTAR_tracking.Pages.ProjectTasks
 {
     public class CreateModel : PageModel
     {
-        private readonly FiveSTAR_tracking.Models.ProjectsContext _context;
+        private readonly FiveSTAR_tracking.Models.ProjectTaskContext _context;
 
-        public CreateModel(FiveSTAR_tracking.Models.ProjectsContext context)
+        public CreateModel(FiveSTAR_tracking.Models.ProjectTaskContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace FiveSTAR_tracking.Pages.Tasks
         }
 
         [BindProperty]
-        public Projects Projects { get; set; }
+        public ProjectTask ProjectTask { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -33,7 +33,7 @@ namespace FiveSTAR_tracking.Pages.Tasks
                 return Page();
             }
 
-            _context.Projects.Add(Projects);
+            _context.ProjectTasks.Add(ProjectTask);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
