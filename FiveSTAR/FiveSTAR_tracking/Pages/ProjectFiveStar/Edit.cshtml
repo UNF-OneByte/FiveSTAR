@@ -1,0 +1,85 @@
+﻿@page
+@model FiveSTAR_tracking.Pages.ProjectFiveStar.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>ProjectsFiveStar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProjectsFiveStar.ID" />
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.ProjectName" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.ProjectName" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.ProjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.ProjectManager" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.ProjectManager" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.ProjectManager" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.Description" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.Description" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.StartDate" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.StartDate" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.EstEndtDate" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.EstEndtDate" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.EstEndtDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.ActEndDate" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.ActEndDate" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.ActEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.EstCost" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.EstCost" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.EstCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.ActCost" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.ActCost" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.ActCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.EstHours" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.EstHours" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.EstHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.ActHours" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.ActHours" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.ActHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsFiveStar.IdUsers" class="control-label"></label>
+                <input asp-for="ProjectsFiveStar.IdUsers" class="form-control" />
+                <span asp-validation-for="ProjectsFiveStar.IdUsers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
