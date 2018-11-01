@@ -1,0 +1,61 @@
+﻿@page
+@model FiveSTAR_tracking.Pages.ProjectTasks.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectTask</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.TaskName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.TaskName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.Task_Est_Cost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.Task_Est_Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.Task_Act_Cost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.Task_Act_Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.idVendor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.idVendor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.HoursWorked)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.HoursWorked)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTask.idUsers)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTask.idUsers)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ProjectTask.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

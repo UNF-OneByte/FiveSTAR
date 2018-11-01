@@ -36,8 +36,8 @@ namespace FiveSTAR_tracking
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<ProjectsContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ProjectsContext")));
+            services.AddDbContext<ProjectTaskContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ProjectTaskContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
