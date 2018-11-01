@@ -26,11 +26,17 @@ namespace FiveSTAR_tracking.Migrations
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<decimal>("Hours");
+                    b.Property<decimal>("HoursWorked");
 
-                    b.Property<decimal>("MaterialCost");
+                    b.Property<string>("TaskName");
 
-                    b.Property<string>("Task");
+                    b.Property<decimal>("Task_Act_Cost");
+
+                    b.Property<decimal>("Task_Est_Cost");
+
+                    b.Property<int>("idUsers");
+
+                    b.Property<int>("idVendor");
 
                     b.HasKey("ID");
 

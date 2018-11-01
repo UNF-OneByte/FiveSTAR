@@ -2,10 +2,10 @@
 @model FiveSTAR_tracking.Pages.Tasks.CreateModel
 
 @{
-    ViewData["Title"] = "Add Tasks";
+    ViewData["Title"] = "Create";
 }
 
-<h2>New Tasks</h2>
+<h2>Create</h2>
 
 <h4>Projects</h4>
 <hr />
@@ -14,9 +14,24 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Projects.Task" class="control-label"></label>
-                <input asp-for="Projects.Task" class="form-control" />
-                <span asp-validation-for="Projects.Task" class="text-danger"></span>
+                <label asp-for="Projects.TaskName" class="control-label"></label>
+                <input asp-for="Projects.TaskName" class="form-control" />
+                <span asp-validation-for="Projects.TaskName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Projects.Task_Est_Cost" class="control-label"></label>
+                <input asp-for="Projects.Task_Est_Cost" class="form-control" />
+                <span asp-validation-for="Projects.Task_Est_Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Projects.Task_Act_Cost" class="control-label"></label>
+                <input asp-for="Projects.Task_Act_Cost" class="form-control" />
+                <span asp-validation-for="Projects.Task_Act_Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Projects.idVendor" class="control-label"></label>
+                <input asp-for="Projects.idVendor" class="form-control" />
+                <span asp-validation-for="Projects.idVendor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Projects.Date" class="control-label"></label>
@@ -24,14 +39,14 @@
                 <span asp-validation-for="Projects.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Projects.Hours" class="control-label"></label>
-                <input asp-for="Projects.Hours" class="form-control" />
-                <span asp-validation-for="Projects.Hours" class="text-danger"></span>
+                <label asp-for="Projects.HoursWorked" class="control-label"></label>
+                <input asp-for="Projects.HoursWorked" class="form-control" />
+                <span asp-validation-for="Projects.HoursWorked" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Projects.MaterialCost" class="control-label"></label>
-                <input asp-for="Projects.MaterialCost" class="form-control" />
-                <span asp-validation-for="Projects.MaterialCost" class="text-danger"></span>
+                <label asp-for="Projects.idUsers" class="control-label"></label>
+                <input asp-for="Projects.idUsers" class="form-control" />
+                <span asp-validation-for="Projects.idUsers" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
