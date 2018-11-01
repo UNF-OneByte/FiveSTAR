@@ -1,5 +1,5 @@
 ﻿@page
-
+@model FiveSTAR_tracking.Pages.Tasks.IndexModel;
 @{
     Layout = "~/Pages/Shared/_Layout_not_home.cshtml";
 }
@@ -12,33 +12,48 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-<div class="row">
-    <div class="wrap">
-        <span class="border border-dark">
-            <div class="wrapBorder">
-                <h4>Pie Chart</h4>
-                <hr />
-                <h6>Change view</h6>
-                <label class="switch">
-                    <input type="checkbox" onclick="pieView()" id="sldBTN">
-                    <span class="slider round"></span>
-                </label>
-                <div id="pie" style="height: 300px; width: 100%;"></div>
-                <hr />
-                <h4>Create Data</h4>
-                <table class="table table-striped" id="table">
-                    <th>Income</th>
-                    <th>Expense</th>
-                    <th>Net Income</th>
-                </table>
-                <hr />
-                <button type="button" class="btn btn-primary btn-sm" id="test" onclick="newRow()">Add Row</button>
-                <button type="button" class="btn btn-dark btn-sm" onclick="byeRow()" disabled>Remove Row</button>
-            </div>
-        </span>
-    </div>
+<div class="row wrap wrapBorder">
+    @*<span class="border border-dark">*@
+    <h2>Pie Chart</h2>
+    <hr />
+    <h6>Change view</h6>
+    <label class="switch">
+        <input type="checkbox" onclick="pieView()" id="sldBTN">
+        <span class="slider round"></span>
+    </label>
+    <div id="pie" style="height: 300px; width: 100%;"></div>
+    <hr />
+    <h4>Budget Reporting:</h4>
+    <table class="table table-striped" id="table">
+        <thead>
+            <tr>
+                <th>Est. Cost</th>
+                <th>Actual Cost</th>              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Projects)
+            {
+            <tr>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Task_Est_Cost)
+                    @*<div class="input-group mb-2 mr-sm-2 input-group-prepend input-group-text"><input type="text" class="form-control" placeholder="0.00" id="est_cost" readonly></div>*@
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Task_Act_Cost)                 
+                </td>               
+            </tr>
+            }
+        </tbody>
+    </table>   
+
+    <hr />
+    <button type="button" class="btn btn-primary btn-sm" id="test" onclick="newRow()" disabled>Add Row</button>
+    <button type="button" class="btn btn-dark btn-sm" onclick="byeRow()" disabled>Remove Row</button>
+    @*</span>*@
 </div>
 
 
-<!-- my scripts -->
-<script src="js/script.js"></script>
+
+    <!-- my scripts -->
+    <script src="js/script.js"></script>

@@ -53,12 +53,12 @@ var pieViewAction = true;
 
 //income - expense = net
 function netFormula(){
-  var income = parseInt(document.getElementById("income").value);
-  var expense = parseInt(document.getElementById("expense").value);
-  var result = income - expense;
+    var income = parseInt(document.getElementById("est_cost").value);
+    var expense = parseInt(document.getElementById("act_cost").value);
+    var result = est_cost - act_cost;
     document.getElementById("net").value = result;
-    x = income;
-    pie(income, expense, pieViewAction);
+    x = est_cost;
+    pie(est_cost, act_cost, pieViewAction);
 
   return true;
 }
@@ -74,9 +74,7 @@ window.onload = function() {
       type: "doughnut",
     dataPoints: [
         { y: 1},
-        { y: 1},
-        { y: 1},
-        { y: 1},
+        { y: 1},        
       ]
     }
     ]
@@ -99,8 +97,8 @@ function pie(income, expense, pieViewAction) {
                 {
                     type: view,
                     dataPoints: [
-                        { y: income },
-                        { y: expense },                      
+                        { y: est_cost },
+                        { y: act_cost },                      
                     ]
                 }
             ]
@@ -114,4 +112,72 @@ function pieView() {
     pieViewAction = !pieViewAction;
     
     netFormula();
+}
+
+
+window.onload = function() {
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title: {
+            text: "Olympic Medals of all Times (till 2016 Olympics)"
+        },
+        axisY: {
+            title: "Medals"
+        },
+        legend: {
+            cursor: "pointer",
+            itemclick: toggleDataSeries
+        },
+        toolTip: {
+            shared: true,
+            content: toolTipFormatter
+        },
+        data: [{
+            type: "bar",
+            showInLegend: true,
+            name: "Gold",
+            color: "gold",
+            dataPoints: [
+                { y: 243, label: "Italy" },
+                { y: 236, label: "China" },
+                { y: 243, label: "France" },
+                { y: 273, label: "Great Britain" },
+                { y: 269, label: "Germany" },
+                { y: 196, label: "Russia" },
+                { y: 1118, label: "USA" }
+            ]
+        },
+        {
+            type: "bar",
+            showInLegend: true,
+            name: "Silver",
+            color: "silver",
+            dataPoints: [
+                { y: 212, label: "Italy" },
+                { y: 186, label: "China" },
+                { y: 272, label: "France" },
+                { y: 299, label: "Great Britain" },
+                { y: 270, label: "Germany" },
+                { y: 165, label: "Russia" },
+                { y: 896, label: "USA" }
+            ]
+        },
+        {
+            type: "bar",
+            showInLegend: true,
+            name: "Bronze",
+            color: "#A57164",
+            dataPoints: [
+                { y: 236, label: "Italy" },
+                { y: 172, label: "China" },
+                { y: 309, label: "France" },
+                { y: 302, label: "Great Britain" },
+                { y: 285, label: "Germany" },
+                { y: 188, label: "Russia" },
+                { y: 788, label: "USA" }
+            ]
+        }]
+    });
+    chart.render();
+
 }
