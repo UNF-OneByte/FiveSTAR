@@ -4,14 +4,16 @@ using FiveSTAR_tracking.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FiveSTAR_tracking.Migrations
 {
     [DbContext(typeof(ProjectTaskContext))]
-    partial class ProjectTaskContextModelSnapshot : ModelSnapshot
+    [Migration("20181101193708_ProjectFiveStar")]
+    partial class ProjectFiveStar
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
