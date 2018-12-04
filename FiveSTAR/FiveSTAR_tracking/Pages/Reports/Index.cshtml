@@ -7,59 +7,88 @@
 }
 
 <!-- chart libary -->
-<script type="text/javascript" src="js/canvasjs.min.js"></script>
+<script src="~/js/canvasjs.min.js"></script>
 <!-- Font awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- my scripts -->
+<script src="~/js/script.js"></script>
 
 
 <div class="row wrap wrapBorder">
     @*<span class="border border-dark">*@
     <h2>Pie Chart</h2>
     <hr />
+    <h4>Budget v. Cost</h4>
     <h6>Change view</h6>
     <label class="switch">
         <input type="checkbox" onclick="pieView()" id="sldBTN">
         <span class="slider round"></span>
     </label>
+    <br />
+    <h6><strong>Blue:</strong> Budgeted Cost</h6>    
+    <h6><strong>Red:</strong> Act Cost</h6>
     <div id="pie" style="height: 300px; width: 100%;"></div>
     <hr />
-    <h4>Budget Reporting:</h4>
-    <table class="table table-striped" id="table">
-        <thead>
-            <tr>
-                <th>Est. Cost</th>
-                <th>Actual Cost</th>              
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container">
+        <form>
+            <div class="form-group col-sm-3">
+                <label>Select a task:</label>
+                <select class="form-control">
 
-            @foreach (var item in Model.ProjectTask)
-
-            {
-            <tr>
-                <td>
-                    $@Html.DisplayFor(modelItem => item.Task_Est_Cost)
-                    @*<div class="input-group mb-2 mr-sm-2 input-group-prepend input-group-text"><input type="text" class="form-control" placeholder="0.00" id="est_cost" readonly></div>*@
-                </td>
-                <td>
-                    $@Html.DisplayFor(modelItem => item.Task_Act_Cost)                 
-                </td>               
-            </tr>
-            }
-        </tbody>
-    </table>   
-
-    <hr />
-    <button type="button" class="btn btn-primary btn-sm" id="test" onclick="newRow()" disabled>Add Row</button>
-    <button type="button" class="btn btn-dark btn-sm" onclick="byeRow()" disabled>Remove Row</button>
-    @*</span>*@
+                    @foreach (var item in Model.ProjectTask)
+                    {
+                        <option id="taskName">
+                            @Html.DisplayFor(modelItem => item.TaskName)
+                        </option>
+                    }
+                </select>
+                <br />
+                <button type="button" class="btn btn-primary" onclick="runReport()">Run</button>
+            </div>
+        </form>
+    </div>
 </div>
+<br />
+
+<script>    
+    function runReport() {          
+        var t = document.getElementById("taskName");
+
+        pie(random(), random(), true);            
+    }
+
+    function random() {
+        var x = Math.floor(Math.random() * 5000) + 329;
+        return x;
+    }
+
+        function pie(income, expense, pieViewAction) {
+            var view = "";
+            var est_cost = expense;
+            var act_cost = income;
+
+            if (pieViewAction === true)
+                view = "doughnut";
+            else
+                view = "pie";
+
+            var chart = new CanvasJS.Chart("pie",
+                {
+                    data: [
+                        {
+                            type: view,
+                            dataPoints: [
+                                { y: est_cost },
+                                { y: act_cost },
+                            ]
+                        }
+                    ]
+                });
+            chart.render();
+        }        
+</script>
 
 
-
-    <!-- my scripts -->
-
-    <script src="~/js/script.js"></script>
 

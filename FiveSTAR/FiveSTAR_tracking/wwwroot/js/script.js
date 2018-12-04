@@ -82,6 +82,14 @@ window.onload = function() {
     chart.render();
   }
 
+function runReport() {
+    var t = document.getElementById("taskName");
+    if (t == pasta) {
+        pie(10,50,true);
+    }
+    alert(t);
+
+}
 
 function pie(income, expense, pieViewAction) {
     var view = "";
